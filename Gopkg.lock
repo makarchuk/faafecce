@@ -2,12 +2,6 @@
 
 
 [[projects]]
-  name = "github.com/disintegration/imaging"
-  packages = ["."]
-  revision = "bbcee2f5c9d5e94ca42c8b50ec847fec64a6c134"
-  version = "v1.4.2"
-
-[[projects]]
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
@@ -29,21 +23,12 @@
   name = "gocv.io/x/gocv"
   packages = ["."]
   revision = "09994446aec439b74e48f97f777026cc47a6fe14"
+  source = "gocv.io/x/gocv"
   version = "0.13.1"
-
-[[projects]]
-  branch = "master"
-  name = "golang.org/x/image"
-  packages = [
-    "bmp",
-    "tiff",
-    "tiff/lzw"
-  ]
-  revision = "af66defab954cb421ca110193eed9477c8541e2a"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "2bf899648b484f29ed6d67459365b6bb294ca8f9b1c98aa4368013aa8fbabd06"
+  inputs-digest = "8cca5fc1bb375c00e0b5e8673fdb9d051db7aaad2135e8a6d8df405d68d610f2"
   solver-name = "gps-cdcl"
   solver-version = 1

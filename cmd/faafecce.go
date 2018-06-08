@@ -13,19 +13,20 @@ var rootCmd = &cobra.Command{
 	Short: "Face mirroring tool",
 	Run: func(cmd *cobra.Command, args []string) {
 		filename, err := cmd.PersistentFlags().GetString("file")
-		if err != nil {
-			panic(err)
+		if err != nil || filename == "" {
+			panic("No filename provided")
 		}
 		outfile, err := cmd.PersistentFlags().GetString("write")
-		if err != nil {
-			panic(err)
+		if err != nil || outfile == "" {
+			outfile = filename + "mirrored.jpeg"
 		}
-		// if middle {
-		// 	middler = faafecce.Middle
-		// } else {
-		// 	middler = faafecce.Face
-		// }
-		middler := faafecce.Middle
+		middle, err := cmd.PersistentFlags().GetBool("middle")
+		var middler faafecce.Middler
+		if middle {
+			middler = faafecce.Middle
+		} else {
+			middler = faafecce.Face
+		}
 
 		err = faafecce.Transform(middler, filename, "", outfile)
 		if err != nil {
